@@ -22,6 +22,16 @@ class ViewController: UIViewController {
         self.present(firstVC, animated: true, completion: nil)
     }
     
+    // 2) Create an instance of Storyboard connecting to next VC
+    @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
+        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? SecondViewController else { return }
+        secondVC.someString = "Bonjour!"
+        //⛔️secondVC.mainLabel.text = "Bonjour!" <- This will cause an error because the instance of storyboard hasn't yet created.
+        secondVC.modalPresentationStyle = .fullScreen
+        self.present(secondVC, animated: true, completion: nil)
+    }
+    
+    
 
 }
 
