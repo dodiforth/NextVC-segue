@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // 1) Only Code connecting to next VC
+    // 1) Only Code. Creating and connecting to next VC
     @IBAction func onlyCodeButtonTapped(_ sender: UIButton) {
         let firstVC = FirstViewController()
         firstVC.someString = "Hello there!"
@@ -31,7 +31,22 @@ class ViewController: UIViewController {
         self.present(secondVC, animated: true, completion: nil)
     }
     
+    // 3) Connecting to next VC by Storyboard with Segue (VC to VC)
+    @IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
+        // Surrounding with "if" conditinal can make this Segue as "Conditional"
+        self.performSegue(withIdentifier: "toThirdVC", sender: self)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //3) 💯 Need "prepare" method to transfer datas for 3) choice !!
+        if segue.identifier == "toThirdVC" {
+            let thirdVC = segue.destination as! ThirdViewController
+            thirdVC.someString = "안녕하세요"
+            //⛔️thirdVC.mainLabel.text = "안녕하세요" <- This will cause an error because the instance of storyboard hasn't yet created.
+        }
+        
+    }
 
 }
 

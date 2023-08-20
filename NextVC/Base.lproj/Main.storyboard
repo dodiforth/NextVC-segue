@@ -52,6 +52,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="storyboardWithSegueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fyZ-a0-OQ6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-a0-Rbz">
                                         <rect key="frame" x="0.0" y="246" width="375" height="44"/>
@@ -72,10 +75,67 @@
                             <constraint firstItem="r5X-Ao-Kr3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jPJ-w9-td8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="sMF-Sw-Vbq" kind="show" identifier="toThirdVC" id="Xh1-nb-fXo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="5"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="wtN-Qs-rnG">
+            <objects>
+                <viewController id="sMF-Sw-Vbq" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D4x-do-1fy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThirdViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I8-4H-kVv">
+                                <rect key="frame" x="57" y="394" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="D6E-Uu-svY"/>
+                                    <constraint firstAttribute="width" constant="300" id="fgI-Wa-Bj3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-WC-05r">
+                                <rect key="frame" x="157" y="708" width="100" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4KE-Em-bYh"/>
+                                    <constraint firstAttribute="width" constant="100" id="6yp-i2-2Qf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="sMF-Sw-Vbq" eventType="touchUpInside" id="YNY-Wa-brx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bcl-1b-UJB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5I8-4H-kVv" firstAttribute="centerY" secondItem="D4x-do-1fy" secondAttribute="centerY" id="34E-4n-9aK"/>
+                            <constraint firstItem="bcl-1b-UJB" firstAttribute="bottom" secondItem="B9p-WC-05r" secondAttribute="bottom" constant="80" id="E3I-gy-or1"/>
+                            <constraint firstItem="5I8-4H-kVv" firstAttribute="centerX" secondItem="D4x-do-1fy" secondAttribute="centerX" id="buj-QD-5kJ"/>
+                            <constraint firstItem="B9p-WC-05r" firstAttribute="centerX" secondItem="D4x-do-1fy" secondAttribute="centerX" id="jnl-e5-Eah"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xRw-Ou-cDw"/>
+                    <connections>
+                        <outlet property="mainLabel" destination="5I8-4H-kVv" id="rKl-JQ-XDc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7v-m8-w6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139" y="451"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="sJH-ag-WYk">
@@ -140,6 +200,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
