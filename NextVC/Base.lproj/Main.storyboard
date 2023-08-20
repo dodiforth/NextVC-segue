@@ -64,6 +64,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="vBQ-rM-Ma2" kind="show" identifier="toFourthVC" id="OJx-Ra-1bu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -137,6 +140,60 @@
             </objects>
             <point key="canvasLocation" x="1139" y="451"/>
         </scene>
+        <!--Fourth View Controller-->
+        <scene sceneID="6Gr-PG-J3j">
+            <objects>
+                <viewController id="vBQ-rM-Ma2" customClass="FourthViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ai2-KR-Dca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FourthViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-MI-ojS">
+                                <rect key="frame" x="52" y="394" width="310" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="no4-w7-drU"/>
+                                    <constraint firstAttribute="height" constant="50" id="xLD-ak-drc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elh-iv-drf">
+                                <rect key="frame" x="157" y="708" width="100" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KCr-AY-yrU"/>
+                                    <constraint firstAttribute="width" constant="100" id="oDM-lc-2b7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="vBQ-rM-Ma2" eventType="touchUpInside" id="R3V-an-Nde"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lzc-vj-7B2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ycE-MI-ojS" firstAttribute="centerY" secondItem="Ai2-KR-Dca" secondAttribute="centerY" id="0wD-Xf-hTU"/>
+                            <constraint firstItem="lzc-vj-7B2" firstAttribute="bottom" secondItem="elh-iv-drf" secondAttribute="bottom" constant="80" id="86p-MD-bcT"/>
+                            <constraint firstItem="ycE-MI-ojS" firstAttribute="centerX" secondItem="Ai2-KR-Dca" secondAttribute="centerX" id="KB2-zA-0TN"/>
+                            <constraint firstItem="elh-iv-drf" firstAttribute="centerX" secondItem="Ai2-KR-Dca" secondAttribute="centerX" id="Oa7-Tu-tNo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bwp-6A-8Wn"/>
+                    <connections>
+                        <outlet property="mainLabel" destination="ycE-MI-ojS" id="Pff-TB-uBL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQ4-qh-rri" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="1142"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="sJH-ag-WYk">
             <objects>
@@ -203,6 +260,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

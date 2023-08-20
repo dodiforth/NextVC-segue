@@ -46,7 +46,23 @@ class ViewController: UIViewController {
             //⛔️thirdVC.mainLabel.text = "안녕하세요" <- This will cause an error because the instance of storyboard hasn't yet created.
         }
         
+        if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController
+            fourthVC.someString = "Ciao!"
+            //⛔️fourthVC.mainLabel.text = "Ciao!" <- This will cause an error because the instance of storyboard hasn't yet created.
+        }
     }
+    
+    // 4) Connecting to next VC by Storyboard with Segue (Button to VC)
+    // -> Since this Seuge is connected directly with Button and VC. There is no need to write perforSegue or anything. But, if you want to make it conditional the code below will help.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        //print(#function)
+//        if identifier == "toFourthVC" {
+//            return false
+//        }
+        return true
+    }
+    
 
 }
 
